@@ -1,0 +1,11 @@
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+define('ROOT_DIR', __DIR__);
+define('SRC_DIR', ROOT_DIR . DIRECTORY_SEPARATOR .'src');
+define('CONFIGS_DIR', SRC_DIR . DIRECTORY_SEPARATOR . 'configs');
+
+$app = \MicroProject\App::getInstance();
+
+$app->init();
