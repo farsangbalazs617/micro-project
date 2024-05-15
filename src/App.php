@@ -8,6 +8,9 @@ use Symfony\Component\Console\Command\Command;
 
 final class App extends Application {
 
+    const VERSION_NUMBER = '1.0.0';
+    const APPLICATION_NAME = 'Micro Project';
+
     private static ?App $instance = null;
     private static ?ConfigLoader $config = null;
 
@@ -17,7 +20,7 @@ final class App extends Application {
     public static function getInstance(): App
     {
         if (self::$instance === null) {
-            self::$instance = new self();
+            self::$instance = new self(self::APPLICATION_NAME, self::VERSION_NUMBER);
             self::$config = ConfigLoader::getInstance();
         }
 
